@@ -9,6 +9,7 @@
 
    Author: Matt Kaczynski
    Website: http://www.MK-SmartHouse.com
+   Version 1 and 2
 
    Original software modified by Mountain-Eagle Pitt
    Website: www.mountaineagle-technologies.com.au V6 and above
