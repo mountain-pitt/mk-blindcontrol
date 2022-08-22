@@ -2,12 +2,9 @@ void append_page_header() {
   webpage  = F("<!DOCTYPE html><html>");
   webpage += F("<head>");
   webpage += F("<title>File MK-BlindControl</title>"); // NOTE: 1em = 16px
-  
   webpage += F("<meta name='viewport' content='user-scalable=yes,initial-scale=1.0,width=device-width'>");
   webpage += F("<style>");
-  //webpage += F("body{max-width:65%;margin:0 auto;font-family:arial;font-size:105%;text-align:center;color:blue;background-color:#FFFFFF;}");
   webpage += F("body{max-width:65%;margin:0 auto;font-family:arial;font-size:105%;text-align:center;color:blue;background-color:#F7F2Fd;}");
-
   webpage += F("ul{list-style-type:none;margin:0.1em;padding:0;border-radius:0.375em;overflow:hidden;background-color:#dcade6;font-size:1em;}");
   webpage += F("li{float:left;border-radius:0.375em;border-right:0.06em solid #bbb;}last-child {border-right:none;font-size:85%}");
   webpage += F("li a{display: block;border-radius:0.375em;padding:0.44em 0.44em;text-decoration:none;font-size:85%}");
@@ -24,41 +21,29 @@ void append_page_header() {
   webpage += F(".rcorners_w {border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:70%;color:white;font-size:75%;}");
   webpage += F(".column{float:left;width:50%;height:45%;}");
   webpage += F(".row:after{content:'';display:table;clear:both;}");
-  //webpage += F("*{box-sizing:border-box;}");
-  /////eedfff
   webpage += F("footer{background-color:#eedfff; text-align:center;padding:0.3em 0.3em;border-radius:0.375em;font-size:60%;}");
   webpage += F("button{border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:20%;color:white;font-size:130%;}");
   webpage += F(".buttons {border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:15%;color:white;font-size:80%;}");
   webpage += F(".buttonsm{border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:9%; color:white;font-size:70%;}");
   webpage += F(".buttonm {border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:15%;color:white;font-size:70%;}");
   webpage += F(".buttonw {border-radius:0.5em;background:#558ED5;padding:0.3em 0.3em;width:40%;color:white;font-size:70%;}");
-  //////
   webpage += F("a{font-size:75%;}");
   webpage += F("p{font-size:75%;}");
-  ///+String(file.name())+
-
-  
- 
   webpage += F("</style></head><body><h1>MK-BlindControl "); webpage += String(ServerVersion) + "</h1>";
 }
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void append_page_footer(){ // Saves repeating many lines of code for HTML page footers
-  ////for coding footer see web sites
-  //////https://bit-calculator.com/bit-shift-calculator
-  //////https://lwp.interglacial.com/appf_01.htm
-  webpage += F("<ul>");
-  webpage += F("<li><a href='/'>Home</a></li>"); // Lower Menu bar command entries
-   
-  webpage += F("<li><a href='/firmwareupdate'>Firmware</a></li>");
-  webpage += F("<li><a href='/reboot'>Reboot</a></li>");
-  webpage += F("<li><a href='/reset'>Reset</a></li>");
-  webpage += F("<li><a href='/set-servo'>Align</a></li>");
-  webpage += F("<li><a href='/set-limits'>Limit Set</a></li>");
-  webpage += F("<li><a href='/setup'>Setup</a></li>");
-  webpage += F("<li><a href='/saveconfig'>Save</a></li>");
-  webpage += F("<li><a href='/filemanager'>File Manager</a></li>");
- //webpage += F("<li><a href='/help'>About</a></li>");
- webpage += F("<li><a href='https://mountaineagle-technologies.com.au/tasmota/mkblindcontrol.html'>About</a></li>");
+webpage += F("<ul>");
+webpage += F("<li><a href='/'>Home</a></li>"); // Lower Menu bar command entries   
+webpage += F("<li><a href='/firmwareupdate'>Firmware</a></li>");
+webpage += F("<li><a href='/reboot'>Reboot</a></li>");
+webpage += F("<li><a href='/reset'>Reset</a></li>");
+webpage += F("<li><a href='/set-servo'>Align</a></li>");
+webpage += F("<li><a href='/set-limits'>Limit Set</a></li>");
+webpage += F("<li><a href='/setup'>Setup</a></li>");
+webpage += F("<li><a href='/saveconfig'>Save</a></li>");
+webpage += F("<li><a href='/filemanager'>File Manager</a></li>");
+webpage += F("<li><a href='https://mountaineagle-technologies.com.au/tasmota/mkblindcontrol.html'>About</a></li>");
 webpage += F("</ul>");
 webpage += "<footer>&trade;"+String(char(byte(0x40>>1)))+String(char(byte(0x9a>>1)))+String(char(byte(0xde>>1)))+String(char(byte(0xea>>1)))+String(char(byte(0xdc>>1)));
 webpage += String(char((0xe8>>1)))+String(char(byte(0xc2>>1)))+String(char(0xd2>>1))+String(char(0xdc>>1))+String(char(byte(0x8a>>1)));
