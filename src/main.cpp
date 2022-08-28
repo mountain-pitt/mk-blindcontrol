@@ -252,9 +252,8 @@ if (String(blinds_speed).equalsIgnoreCase("MED")){
 if (String(blinds_speed).equalsIgnoreCase("HIGH")){    
   blinddelay = 0;
   }  
-  ///////////////////////////////
-  
-   //if ((String(blinds_speed).equalsIgnoreCase("LOW"))||(String(blinds_speed).equalsIgnoreCase("MED")))
+   
+   
   if (String(blinds_speed).equalsIgnoreCase("SLOW"))
   {
     if (pos < myservo[0].read())
@@ -295,9 +294,7 @@ if (String(blinds_speed).equalsIgnoreCase("HIGH")){
   }
   ServoPos = myservo[0].read();
 }
-///////////////////////////
 
-//////////////////////////////
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void AutoConfigBlind(){
@@ -412,12 +409,12 @@ void configupgrade(){
         configFile.close();
         LittleFS.remove("/" + String(software_version_old) + ".json");   ///remove existing file before re writting
 
-        ///if (json.success())  /////JSON5
+        
         if ( ! deserializeError )    ////JSON6
         {
 
          /////save to new file  
-           //LittleFS.remove("/" + String(software_version_old) + ".json");   ///remove existing file before re writting
+           
            File configFile = LittleFS.open("/" + String(software_version) + ".json", "w"); 
 
             serializeJson(json, Serial);    ////JSON6
@@ -428,7 +425,7 @@ void configupgrade(){
         else
         {
         }
-        /////erase spiffs
+        
 
 
       }
@@ -464,8 +461,7 @@ void handleServo(){
 
 }
 
-///////////////all function go here before setup and loop
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 void process_state()
 
@@ -496,7 +492,7 @@ String str_close_limit_default = close_limit_default;
     
   if (HA_Blind_State == "CLOSED")
     {
-      // client.publish("stat/" + _identifier + "/Processing", "Closed");
+      
       if (invert_state == true)
       {
         ////////////                  0          plus   20 
@@ -515,7 +511,7 @@ String str_close_limit_default = close_limit_default;
 
 
   if (invert_state == true)
-    //if (String(blinds_invert_state).equalsIgnoreCase("YES"))
+    
     {
         if ((HA_Blind_State == "OPENED") || (HA_Blind_State == "CLOSED"))
            {
@@ -530,7 +526,7 @@ String str_close_limit_default = close_limit_default;
             Blind_STATE = String((int)(100 - (myservo[0].read() / 1.8) + 0.5));
             TiltPos = String((int)(100 - ((myservo[0].read() / 1.8) - 0) )); // 
           }
- ///////////////////////////////////////////   
+ 
     } 
     
     
@@ -559,7 +555,7 @@ String str_close_limit_default = close_limit_default;
     ServoPos = myservo[0].read();   //set servo posiotion to save in
 }
 
-////////////////////////////////////////////
+
 void publish_state()
 
 {
@@ -1015,8 +1011,6 @@ void handleMoveServo() {
   
   
   
-  //myservo[0].attach(13, 544, 2200);
-  //myservo[1].attach(14, 544, 2200);
     // Wait 500 milliseconds 
     delay(500);  
   
@@ -1132,13 +1126,9 @@ devicestate["STATE"] = Blind_STATE;
     {
     }
 
-    ///devicestate.printTo(Serial);   ///JSON5
-    ////devicestate.printTo(configFile);    ///JSON5
-
+   
     serializeJson(devicestate, Serial);   ////JSON6
     serializeJson(devicestate, configFile);    /////JSON6
-
-
 
 
     configFile.close();
@@ -1211,7 +1201,7 @@ void tele_update() {
     serializeJson(rootstate, JSONmessageBufferstate, size);   //JSON6
     //rootstate.printTo(JSONmessageBufferstate, size);   ///JSON5
     
-///////////get offset value based on open and lsosed limits and state of blind ie opened or closed
+///////////get offset value based on open and closed limits and state of blind ie opened or closed
   //////////////////////////////////////////
   
   publish_state();
@@ -1412,13 +1402,13 @@ void messageReceived(String &topic, String &payload)
   //else if (payload == "OPEN" && topic == "cmnd/" + String(mqtt_topic) + "/POWER")
   
   {
-    //msgString = "0"; //allows for trim adj
+    
     
     if (String(msgString).equalsIgnoreCase("SLOW"))
         {
         
         strcpy(blinds_speed, "SLOW");
-        //client.publish("tele/" + String(mqtt_topic) + "/SPEED_NEW", String(blinds_speed));  //testing
+        
         }
          else
          {
@@ -1431,9 +1421,7 @@ void messageReceived(String &topic, String &payload)
         bypassdevstat = 1;
   }
   
-  ////////////////////////////////////////////
-
-
+  
  //////////////////////
 //if (msgString.equalsIgnoreCase("OPEN"))   OPEN OFF and 0
  else if ((String(msgString).equalsIgnoreCase("OPEN") || String(msgString).equalsIgnoreCase("OFF") || String(msgString).equalsIgnoreCase("0")) && (topic == "cmnd/" + _identifier + "/POWER"))
