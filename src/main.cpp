@@ -1422,7 +1422,6 @@ void messageReceived(String &topic, String &payload)
   }
   
   
- //////////////////////
 //if (msgString.equalsIgnoreCase("OPEN"))   OPEN OFF and 0
  else if ((String(msgString).equalsIgnoreCase("OPEN") || String(msgString).equalsIgnoreCase("OFF") || String(msgString).equalsIgnoreCase("0")) && (topic == "cmnd/" + _identifier + "/POWER"))
     
