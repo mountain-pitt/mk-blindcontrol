@@ -43,7 +43,7 @@ webpage += F("<li><a href='/set-limits'>Limit Set</a></li>");
 webpage += F("<li><a href='/setup'>Setup</a></li>");
 webpage += F("<li><a href='/saveconfig'>Save</a></li>");
 webpage += F("<li><a href='/filemanager'>File Manager</a></li>");
-webpage += F("<li><a href='https://mountaineagle-technologies.com.au/tasmota/mkblindcontrol.html'>About</a></li>");
+webpage += F("<li><a href='https://github.com/mountain-pitt/mk-blindcontrol/wiki'>About</a></li>");
 webpage += F("</ul>");
 webpage += "<footer>&trade;"+String(char(byte(0x40>>1)))+String(char(byte(0x9a>>1)))+String(char(byte(0xde>>1)))+String(char(byte(0xea>>1)))+String(char(byte(0xdc>>1)));
 webpage += String(char((0xe8>>1)))+String(char(byte(0xc2>>1)))+String(char(0xd2>>1))+String(char(0xdc>>1))+String(char(byte(0x8a>>1)));
