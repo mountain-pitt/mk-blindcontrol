@@ -2941,8 +2941,8 @@ WiFiManagerParameter custom_text27("<p>*Once you have Configured SSID, PASSWORD,
   SSDP.setURL("/");
   SSDP.setDeviceType("upnp:rootdevice");
   SSDP.setSerialNumber(ESP.getChipId());
-  SSDP.setModelNumber("MK-Blindcontrol V7");
-  SSDP.setModelURL("https://mountaineagle-technologies.com.au");
+  SSDP.setModelNumber("MK-Blindcontrol V8");
+  SSDP.setModelURL("https://github.com/mountain-pitt/mk-blindcontrol/wiki");
   SSDP.setManufacturer("MK Smarthouse");
   SSDP.setManufacturerURL("https://www.mksmarthouse.com");
 SSDP.begin();
