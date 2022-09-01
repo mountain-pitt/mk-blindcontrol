@@ -1,0 +1,10 @@
+////You need to modify the groups to match your setup (GF_Kitchen, Blinds, RollerBlind, G_Restore), (GF_Kitchen, LWT)
+//Back Door Blind
+
+Dimmer Blind_Back_Door "Back Door Blind [%s]" <rollershutter> (GF_Kitchen, Blinds, RollerBlind, G_Restore) { autoupdate="false", alexa="Lighting", ga="Light" }
+String Blind_Back_Door_Reachable "Back Door Blind "  (GF_Kitchen, LWT)
+String Blind_Back_Door_Speed "Back Door Speed"  (GF_Kitchen, Blinds, RollerBlind, G_Restore) { autoupdate="false", alexa="Lighting", ga="Light" }
+Number Back_Door_rssi      "Back Door Blind  [%d %%]" (GF_Kitchen, RSSI)  
+Number Blind_Back_Door_battery_charge      "Charge Capacity  [%.1f %%]"  (GF_Kitchen)
+Number Blind_Back_Door_battery_voltage      "Battery Voltage  [%.1f V]"  (GF_Kitchen)
+Number Blind_Back_Door_discharge_time      "Discharge Time  [%.1f Min]"  (GF_Kitchen)

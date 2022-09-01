@@ -1,0 +1,6 @@
+		Switch item=Blind_Back_Door  label="Back Door Blind" icon="rollershutter" mappings=[0="Open", 50="Half", 100="Close"]
+		Switch item=Blind_Back_Door_Speed  label="Blind Speed" icon="rollershutter" mappings=[SLOW="SLOW", FAST="FAST"]
+		Slider item=Blind_Back_Door
+		Text item=Blind_Back_Door_Reachable label="Back Door Blind" icon="switch"
+		Text item=Back_Door_rssi label="Back Door Blind Rssi" icon="qualityofservice"
+		

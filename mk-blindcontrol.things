@@ -1,0 +1,21 @@
+Bridge mqtt:broker:mosquitto "Mosquitto" [ host="192.168.0.200", port=1883, secure=false, username="openhabian", password="openhab", clientID="openHAB3" ]{
+ 
+
+
+
+ ////You need to edit the topic names to suit your setup, ie change the "BlindControl2"
+///Back Door Blind
+ Thing topic MK-BlindControl2 "MK-BlindControl-2" @ "Back Door" {
+    Channels:
+        Type string : reachable "Reachable"            [ stateTopic="tele/BlindControl2/LWT" ]
+        Type dimmer : power     "Power"                [ stateTopic="stat/BlindControl2/STATE", commandTopic="cmnd/BlindControl2/POWER" ]
+        Type string : speed     "Speed"                [ stateTopic="stat/BlindControl2/SPEED", commandTopic="cmnd/BlindControl2/SPEED" ]
+        Type number : rssi      "WiFi Signal Strength" [ stateTopic="tele/BlindControl2/STATE", transformationPattern="JSONPATH:$.Wifi.RSSI" ]
+        Type number : battcap   "Battery Charge " [ stateTopic="tele/BlindControl2/STATE", transformationPattern="JSONPATH:$.ChargeCapacity" ]
+        Type number : distime   "Discharge Time" [ stateTopic="tele/BlindControl2/STATE", transformationPattern="JSONPATH:$.RemainingTime" ]
+        Type number : battvolt  "Battery Voltage" [ stateTopic="tele/BlindControl2/STATE", transformationPattern="JSONPATH:$.BattVoltage" ]
+        
+    }
+
+}   
+        
